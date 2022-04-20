@@ -53,7 +53,16 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
 
     # CCA heatmap --------------------------------------------------------------------------------
 
+    if (sum(is.na(cm)) == 0) {
+        name <- "CCA (%)"
+        caption <- "*total number of primary studies included in the review \nCCA: Corrected Covered Area"
+    } else {
+        name <- expression("CCA"[adj]*"(%)")
+        caption <- paste("*total number of primary studies included in the review\n",
+                          "CCAadj: Corrected Covered Area adjusted for structural zeros")
+    }
 
+    
    cca_heatmap <- ggplot2::ggplot(data = data_hm, ggplot2::aes(x = V1, y = V2)) +
         ggplot2::theme_classic(base_size = 16) +
         ggplot2::geom_tile(ggplot2::aes(fill = CCA_Percentage), color='grey') +
@@ -63,9 +72,9 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
         ggplot2::geom_text(data = data_hm2, ggplot2::aes(x = V3, y = V4),  label = r2, size = fontsize, inherit.aes = F) +
         ggplot2::scale_fill_gradient(low="white", limits = c(0, 100),
                             breaks=c(0, 20, 40, 60, 80, 100), high=chroma,
-                            name = "CCA (%)") +
+                            name = name) +
         ggplot2::scale_color_manual(guide = "none", values = c("black", "white")) +
-        ggplot2::labs(caption = "*total number of primary studies included in the review \nCCA: Corrected Covered Area") +
+        ggplot2::labs(caption = caption) +
         ggplot2::theme(
             axis.title=ggplot2::element_blank(),
             axis.text.x=ggplot2::element_text(angle=90, vjust = 0.5, hjust=0.3
