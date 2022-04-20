@@ -13,13 +13,41 @@ devtools::install_github('thdiakon/ccaR_v3')
 
 ```
 
+## Read the data
+
+```
+# Read the data
+DATASET <- readr::read_delim(system.file('extdata','test.csv', package = 'ccaR'), delim = ";")
+
+```
+
+## Overall CCA
+
+```
+# Calculate the overall CCA (for the entire ciattion matrix)
+cca(DATASET)
+```
+
+
 
 ## CCA Table
+
+```
+# Create a summary table with pairwise and overall CCA 
+tb <- cca_table(DATASET)
+```
+
 <img src="man/figures/cca_table.PNG" align="center" width="620" />
 
 
 
 ## Visualization of the pairwise CCA(%) with a heatmap
+
+```
+# Create a pairwise heatmap with CCA(%)
+cca_heatmap(DATASET)
+```
+
 <img src="man/figures/README-plot-1.PNG" align="center" width="620" />
 
 
