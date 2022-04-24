@@ -21,7 +21,7 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
 
     V1 <- c()
     V2 <- c()
-    CCA_Percentage_adjusted <- 0
+    CCA_Percentage <- 0
 
     a <- cca_table(cm)
     cm <- cm[, -1]
@@ -65,10 +65,10 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
     
    cca_heatmap <- ggplot2::ggplot(data = data_hm, ggplot2::aes(x = V1, y = V2)) +
         ggplot2::theme_classic(base_size = 16) +
-        ggplot2::geom_tile(ggplot2::aes(fill = CCA_Percentage_adjusted), color='grey') +
+        ggplot2::geom_tile(ggplot2::aes(fill = CCA_Percentage), color='grey') +
         ggplot2::geom_tile(data = data_hm2, ggplot2::aes(x = V3, y = V4), fill = "grey", color='grey', inherit.aes = F) +
         ggplot2::coord_equal() +
-        ggplot2::geom_text(ggplot2::aes(color = CCA_Percentage_adjusted > 60, label = round(CCA_Percentage_adjusted, 2)), size = fontsize) +
+        ggplot2::geom_text(ggplot2::aes(color = CCA_Percentage > 60, label = round(CCA_Percentage, 2)), size = fontsize) +
         ggplot2::geom_text(data = data_hm2, ggplot2::aes(x = V3, y = V4),  label = r2, size = fontsize, inherit.aes = F) +
         ggplot2::scale_fill_gradient(low="white", limits = c(0, 100),
                             breaks=c(0, 20, 40, 60, 80, 100), high=chroma,
