@@ -60,11 +60,11 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
     # CCA heatmap --------------------------------------------------------------------------------
 
     if (sum(is.na(cm)) == 0) {
-        Percentage <- CCA_Percentage
+        Percentage <- a$CCA_Percentage
         name <- "CCA (%)"
         caption <- "*total number of primary studies included in the review \nCCA: Corrected Covered Area"
     } else {
-        Percentage <- CCA_Percentage_adjusted
+        Percentage <- a$CCA_Percentage_adjusted
         name <- expression("CCA"[adj]*"(%)")
         caption <- paste("*total number of primary studies included in the review\n",
                           "CCAadj: Corrected Covered Area adjusted for structural zeros")
