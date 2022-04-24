@@ -60,11 +60,11 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
     # CCA heatmap --------------------------------------------------------------------------------
 
     if (sum(is.na(cm)) == 0) {
-        Percentage <- dta_hm$CCA_Percentage
+        Percent <- data_hm$CCA_Percentage
         name <- "CCA (%)"
         caption <- "*total number of primary studies included in the review \nCCA: Corrected Covered Area"
     } else {
-        Percentage <- data_hm$CCA_Percentage_adjusted
+        Percent <- data_hm$CCA_Percentage_adjusted
         name <- expression("CCA"[adj]*"(%)")
         caption <- paste("*total number of primary studies included in the review\n",
                           "CCAadj: Corrected Covered Area adjusted for structural zeros")
@@ -73,10 +73,10 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
     
    cca_heatmap <- ggplot2::ggplot(data = data_hm, ggplot2::aes(x = V1, y = V2)) +
         ggplot2::theme_classic(base_size = 16) +
-        ggplot2::geom_tile(ggplot2::aes(fill = Percentage), color='grey') +
+        ggplot2::geom_tile(ggplot2::aes(fill = Percent), color='grey') +
         ggplot2::geom_tile(data = data_hm2, ggplot2::aes(x = V3, y = V4), fill = "grey", color='grey', inherit.aes = F) +
         ggplot2::coord_equal() +
-        ggplot2::geom_text(ggplot2::aes(color = Percentage > 60, label = round(Percentage, 2)), size = fontsize) +
+        ggplot2::geom_text(ggplot2::aes(color = Percent > 60, label = round(Percent, 2)), size = fontsize) +
         ggplot2::geom_text(data = data_hm2, ggplot2::aes(x = V3, y = V4),  label = r2, size = fontsize, inherit.aes = F) +
         ggplot2::scale_fill_gradient(low="white", limits = c(0, 100),
                             breaks=c(0, 20, 40, 60, 80, 100), high=chroma,
