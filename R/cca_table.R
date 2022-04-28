@@ -57,7 +57,7 @@ cca_table <- function(cm){
   if (sum(is.na(cm)) == 0) {
     reviews[overall] <- "Overall"
   } else {
-    reviews[overall] <- "Overall (adusted for structural zeros)"
+    reviews[overall] <- "Overall (adusted for structural missingness)"
   }
 
   overlap_counts[overall] <- " "
