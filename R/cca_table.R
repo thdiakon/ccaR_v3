@@ -73,7 +73,7 @@ cca_table <- function(cm){
     res <- data.frame(reviews, overlap_counts, N, r, c, CCA_Proportion, CCA_Percentage, stringsAsFactors=FALSE)
   } else {
      res <- data.frame(reviews, overlap_counts, N, r, c, X, CCA_Proportion, CCA_Percentage, stringsAsFactors=FALSE)
-     names(res)[names(res) == 'X'] <- 'Structural_zeros'
+     names(res)[names(res) == 'X'] <- 'Structural_missingness'
      names(res)[names(res) == 'CCA_Proportion'] <- 'CCA_Proportion_adjusted'
      names(res)[names(res) == 'CCA_Percentage'] <- 'CCA_Percentage_adjusted'
   }
