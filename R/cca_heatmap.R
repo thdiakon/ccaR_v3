@@ -61,13 +61,10 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
 
     if (sum(is.na(cm)) == 0) {
         Percent <- data_hm$CCA_Percentage
-        name <- "CCA (%)"
         caption <- "*total number of primary studies included in the review \nCCA: Corrected Covered Area"
     } else {
         Percent <- data_hm$CCA_Percentage_adjusted
-        name <- expression("CCA"[adj]*"(%)")
-        caption <- paste("*total number of primary studies included in the review\n",
-                          "CCAadj: Corrected Covered Area adjusted for structural zeros")
+        caption <- "*total number of primary studies included in the review\nCCA: Corrected Covered Area (values are adjusted for structural zeros")
     }
 
     
@@ -80,7 +77,7 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
         ggplot2::geom_text(data = data_hm2, ggplot2::aes(x = V3, y = V4),  label = r2, size = fontsize, inherit.aes = F) +
         ggplot2::scale_fill_gradient(low="white", limits = c(0, 100),
                             breaks=c(0, 20, 40, 60, 80, 100), high=chroma,
-                            name = name) +
+                            name = "CCA (%)") +
         ggplot2::scale_color_manual(guide = "none", values = c("black", "white")) +
         ggplot2::labs(caption = caption) +
         ggplot2::theme(
