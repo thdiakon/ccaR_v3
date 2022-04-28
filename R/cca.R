@@ -31,12 +31,12 @@ cca <- function(cm){
 
   } else {
     res <- data.frame(reviews, N, r, c, X, CCA_Proportion, CCA_Percentage, stringsAsFactors=FALSE)
-    names(res)[names(res) == 'X'] <- 'Structural_zeros'
+    names(res)[names(res) == 'X'] <- 'Structural_missingness'
     
     names(res)[names(res) == 'CCA_Proportion'] <- 'CCA_Proportion_adjusted'
     names(res)[names(res) == 'CCA_Percentage'] <- 'CCA_Percentage_adjusted'
     
-    message("the CCA formula has been adjusted for structural zeros")
+    message("the CCA formula has been adjusted for structural missingness")
   }
 
       return(res)
