@@ -53,7 +53,7 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
     for (i in 1:ncol(cm)){
         single_studies[i] <- sum(cm_singles[i], na.rm = T)
         r2[i] <- sum(cm[i], na.rm = T)
-        r2[i] <- cat(paste(single_studies[i],"/", "\n", r2[i], "*", sep = ""))
+        r2[i] <- paste(single_studies[i],"/", r2[i], "*")
     }
 
 
