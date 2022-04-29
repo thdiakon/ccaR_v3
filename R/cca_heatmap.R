@@ -87,8 +87,7 @@ cca_heatmap <- function(cm, fontsize=5, fontsize_diag=4, chroma="#527e11"){
         ggplot2::labs(caption = caption) +
         ggplot2::theme(
             axis.title=ggplot2::element_blank(),
-            axis.text.x=ggplot2::element_text(angle=90, vjust = 0.5, hjust=0.3
-            ))
+            axis.text.x=ggplot2::element_text(angle=90, vjust = 0.2, hjust=0.05))
 
     return(cca_heatmap)
 }
