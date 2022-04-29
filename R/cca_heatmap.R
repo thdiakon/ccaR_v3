@@ -65,10 +65,10 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
 
     if (sum(is.na(cm)) == 0) {
         Percent <- data_hm$CCA_Percentage
-        caption <- "*unique/total number of primary studies included in the review \nCCA: Corrected Covered Area"
+        caption <- "*single/total number of primary studies included in the review \nCCA: Corrected Covered Area"
     } else {
         Percent <- data_hm$CCA_Percentage_adjusted
-        caption <- "*unique/total number of primary studies included in the review\nCCA: Corrected Covered Area (adjusted values for structural missingness)"
+        caption <- "*single/total number of primary studies included in the review\nCCA: Corrected Covered Area (adjusted values for structural missingness)"
     }
 
     
