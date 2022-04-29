@@ -44,16 +44,16 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
 
     # create a table with the number of unique/primary studies for each SR
 
-    cm_unique <- cm[rowSums(cm, na.rm = T) == 1, ]
+    cm_singles <- cm[rowSums(cm, na.rm = T) == 1, ]
     
     V3 <- colnames(cm)
     V4 <- colnames(cm)
-    unique_studies <- c()
+    single_studies <- c()
     r2 <- c()
     for (i in 1:ncol(cm)){
-        unique_studies[i] <- sum(cm_unique[i], na.rm = T)
+        single_studies[i] <- sum(cm_singles[i], na.rm = T)
         r2[i] <- sum(cm[i], na.rm = T)
-        r2[i] <- paste(unique_studies[i],"/", r2[i], "*")
+        r2[i] <- paste(single_studies[i],"/", r2[i], "*")
     }
 
 
