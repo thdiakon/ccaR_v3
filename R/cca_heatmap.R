@@ -13,9 +13,9 @@
 #' @example man/examples/example2.R
 #'
 #' @export
-cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
+cca_heatmap <- function(cm, fontsize=5, fontsize_diag=4, chroma="#527e11"){
 
-    c(missing(fontsize), missing(chroma))
+    c(missing(fontsize), missing(fontsize_diag) , missing(chroma))
 
     # create a table with all the parameters
 
@@ -78,7 +78,7 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
         ggplot2::geom_tile(data = data_hm2, ggplot2::aes(x = V3, y = V4), fill = "grey", color='grey', inherit.aes = F) +
         ggplot2::coord_equal() +
         ggplot2::geom_text(ggplot2::aes(color = Percent > 60, label = round(Percent, 0)), size = fontsize) +
-        ggplot2::geom_text(data = data_hm2, ggplot2::aes(x = V3, y = V4),  label = r2, size = fontsize, inherit.aes = F) +
+        ggplot2::geom_text(data = data_hm2, ggplot2::aes(x = V3, y = V4),  label = r2, size = fontsize_diag, inherit.aes = F) +
         ggplot2::scale_fill_gradient(low="white", limits = c(0, 100),
                             breaks=c(0, 20, 40, 60, 80, 100), high=chroma,
                             name = "CCA (%)") +
