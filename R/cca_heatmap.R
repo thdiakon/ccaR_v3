@@ -82,6 +82,7 @@ cca_heatmap <- function(cm, fontsize=5, chroma="#527e11"){
         ggplot2::scale_fill_gradient(low="white", limits = c(0, 100),
                             breaks=c(0, 20, 40, 60, 80, 100), high=chroma,
                             name = "CCA (%)") +
+        ggplot2::scale_x_discrete(position = "top") +
         ggplot2::scale_color_manual(guide = "none", values = c("black", "white")) +
         ggplot2::labs(caption = caption) +
         ggplot2::theme(
