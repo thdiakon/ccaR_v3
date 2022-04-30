@@ -59,7 +59,7 @@ cca_heatmap <- function(cm, fontsize=5, fontsize_diag=4, chroma="#527e11"){
     }
 
 
-    data_hm2 <- data.frame(V3, V4, r_singles)
+    data_hm2 <- data.frame(V3, V4, single_total_studies)
 
 
 
