@@ -50,14 +50,16 @@ cca_heatmap <- function(cm, fontsize=5, fontsize_diag=4, chroma="#527e11"){
     V4 <- colnames(cm)
     single_studies <- c()
     r2 <- c()
+    r_singles <- c()
+    
     for (i in 1:ncol(cm)){
         single_studies[i] <- sum(cm_singles[i], na.rm = T)
         r2[i] <- sum(cm[i], na.rm = T)
-        r2[i] <- paste(single_studies[i],"/", r2[i], "*")
+        r_singles[i] <- paste(single_studies[i],"/", r2[i], "*")
     }
 
 
-    data_hm2 <- data.frame(V3, V4, r2)
+    data_hm2 <- data.frame(V3, V4, r_singles)
 
 
 
@@ -78,7 +80,7 @@ cca_heatmap <- function(cm, fontsize=5, fontsize_diag=4, chroma="#527e11"){
         ggplot2::geom_tile(data = data_hm2, ggplot2::aes(x = V3, y = V4), fill = "grey", color='grey', inherit.aes = F) +
         ggplot2::coord_equal() +
         ggplot2::geom_text(ggplot2::aes(color = Percent > 60, label = round(Percent, 0)), size = fontsize) +
-        ggplot2::geom_text(data = data_hm2, ggplot2::aes(x = V3, y = V4),  label = r2, size = fontsize_diag, inherit.aes = F) +
+        ggplot2::geom_text(data = data_hm2, ggplot2::aes(x = V3, y = V4),  label = r_singles, hjust = 0.3, size = fontsize_diag, inherit.aes = F) +
         ggplot2::scale_fill_gradient(low="white", limits = c(0, 100),
                             breaks=c(0, 20, 40, 60, 80, 100), high=chroma,
                             name = "CCA (%)") +
