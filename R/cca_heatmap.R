@@ -42,7 +42,7 @@ cca_heatmap <- function(cm, fontsize=5, fontsize_diag=4, chroma="#527e11"){
     data_hm <- cbind(j2, a2)
 
 
-    # create a table with the number of unique/primary studies for each SR
+    # create a table with the number of singles/primary studies for each SR
 
     cm_singles <- cm[rowSums(cm, na.rm = T) == 1, ]
     
