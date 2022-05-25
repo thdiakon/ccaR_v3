@@ -27,11 +27,7 @@ DATASET <- readr::read_delim(system.file('extdata','test.csv', package = 'ccaR')
 # Calculate the overall CCA (for the entire citation matrix)
 cca(DATASET)
 ```
-
-reviews   N   r  c   CCA_Proportion   CCA_Percentage
-      6  43  14  6        0.4142857             41.4
-
-
+<img src="man/figures/results_cca.PNG" align="center" width="620" />
 
 ## CCA Table
 
