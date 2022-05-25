@@ -27,7 +27,9 @@ DATASET <- readr::read_delim(system.file('extdata','test.csv', package = 'ccaR')
 # Calculate the overall CCA (for the entire citation matrix)
 cca(DATASET)
 ```
-<img src="man/figures/results_cca.PNG" align="center" width="620" />
+<img src="man/figures/results_cca.PNG" align="center" width="320" />
+
+
 
 ## CCA Table
 
