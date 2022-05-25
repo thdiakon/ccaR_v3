@@ -47,7 +47,7 @@ cca(DATASET)
 tb <- cca_table(DATASET)
 ```
 
-<img src="man/figures/cca_table.PNG" align="center" width="620" />
+<img src="man/figures/cca_table.PNG" align="center" width="720" />
 
 
 <br/>
