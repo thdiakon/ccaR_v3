@@ -28,6 +28,9 @@ DATASET <- readr::read_delim(system.file('extdata','test.csv', package = 'ccaR')
 cca(DATASET)
 ```
 
+reviews   N   r  c   CCA_Proportion   CCA_Percentage
+      6  43  14  6        0.4142857             41.4
+
 
 
 ## CCA Table
