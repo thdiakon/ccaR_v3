@@ -51,6 +51,12 @@ cca_heatmap(DATASET)
 <img src="man/figures/README-plot-1.PNG" align="center" width="620" />
 
 
+●	the plot is highly customizable as a ggplot object
+●	it uses a sequential continuous color scale 
+●	it enables the incorporation of structural missingness in the citation matrix (not shown in the graph)
+●	it presents the single/total number of primary studies included in each review in the diagonal tiles (note: a single primary study is exclusively included in only one SR in an overview). For example, in the overview shown in the figure, the study by Guo 2016 is the most recent and largest SR with 12 primary studies (two included only in this SR). Also, the only primary study included in the SR by Middleton 2014 is not included in any other review.
+●	it produces publication-ready plots
+
 
 ## Attribution
 If package ccaR (or code from this package) is used for investigating overlap of primary studies between reviews, please cite the following manuscript:
