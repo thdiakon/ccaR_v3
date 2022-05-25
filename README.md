@@ -25,6 +25,8 @@ library(ccaR)
 DATASET <- readr::read_delim(system.file('extdata','test.csv', package = 'ccaR'), delim = ";")
 ```
 
+<img src="man/figures/DATASET_example.PNG" align="center" width="620" />
+
 <br/>
 
 ## Overall CCA
