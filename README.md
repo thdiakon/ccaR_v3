@@ -71,7 +71,9 @@ Main characteristics:
 
 -	it produces publication-ready plots
 
+
 <br/>
+
 ## Attribution
 If package ccaR (or code from this package) is used for investigating overlap of primary studies between reviews, please cite the following manuscript:
 
