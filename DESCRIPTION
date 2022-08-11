@@ -4,7 +4,7 @@ Title: Calculates the Corrected Covered Area (CCA) Index
 Version: 0.1.0
 Author: Theodoros Diakonidis, Konstantinos Bougioukas
 Maintainer: Theodoros Diakonidis <diakonidis@auth.gr>
-Description: Calculates the corrected covered area CCA. The measure for assessing the overall degree of overlap in an OOSR.
+Description: Calculates and depicts the overlap of primary studies across systematic reviews using the corrected covered area (CCA) index. The generated ‘ggplot2’-based publication quality heatmap may be useful for authors who conduct overviews of reviews.
 License: GPL-2
 Encoding: UTF-8
 LazyData: FALSE
