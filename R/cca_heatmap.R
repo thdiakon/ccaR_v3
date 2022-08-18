@@ -4,7 +4,7 @@
 #'
 #' @param cm Defines the data frame containing 1s, 0s, and NAs (in case of structural missingness).
 #'
-#' @param fontsize Defines the size of the font in the tiles. Default is fontsize = 5.
+#' @param fontsize Defines the size of the font in the tiles. Default is fontsize=5.
 #'
 #' @param fontsize_diag Defines the size of the font in the diagonal grey tiles. Default is fontsize_diag=4.
 #'
