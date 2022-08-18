@@ -1,12 +1,16 @@
 #' @title Plots the cca heatmap
 #'
-#' @description This function plots the cca heatmap. The tiles within the triangular matrix contain color-coded data that demonstrate the degree of overlap between pairs of reviews using the corrected covered area (CCA) measure. It is taking as input the citation matrix, the font size of the text in the tiles and the color used in the heatmap.
+#' @description This function plots the cca heatmap. The tiles within the upper triangular matrix contain color-coded data that demonstrate the degree of overlap between pairs of reviews using the corrected covered area (CCA) measure. It is taking as input the citation matrix, the font size of the text in the tiles and the color used in the heatmap.
 #'
-#' @param cm A dataframe for the citation matrix
+#' @param cm Defines the data frame containing 1s, 0s, and NAs (in case of structural missingness).
 #'
-#' @param fontsize A number which controls the aesthetic of font size of the numbers in the tiles of the heatmap
+#' @param fontsize Defines the size of the font in the tiles. Default is fontsize = 5.
 #'
-#' @param chroma The color of the heatmap
+#' @param fontsize_diag Defines the size of the font in the diagonal grey tiles. Default is fontsize_diag=4.
+#'
+#' @param chroma Defines the color of the plot. Default is chroma="#527e11".
+#'
+#' @param decimal_digits Defines the number of digits in the tiles. Default is decimal_digits=1 and it can also be set as 0.
 #'
 #' @return cca_heatmap
 #'
