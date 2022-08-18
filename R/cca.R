@@ -1,8 +1,8 @@
-#' @title Calculates the total Corrected Covered Area (CCA) Index
+#' @title Calculates the overall Corrected Covered Area (CCA) Index
 #'
-#' @description This package calculates the Corrected Covered Area (CCA) index. The measure for assessing the overall degree of overlap in an OOSR. It is taking as input the citation matrix.
+#' @description It calculates the overall CCA index for the entire citation matrix. It is taking as input the citation matrix.
 #'
-#' @param cm A dataframe for the citation matrix
+#' @param cm A dataframe for the citation matrix.
 #'
 #' @return res
 #'
