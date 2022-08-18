@@ -2,7 +2,7 @@
 #'
 #' @description It calculates the overall CCA index for the entire citation matrix. It is taking as input the citation matrix.
 #'
-#' @param cm A dataframe for the citation matrix.
+#' @param cm Defines the data frame containing 1s, 0s, and NAs (in case of structural missingness).
 #'
 #' @return res
 #'
